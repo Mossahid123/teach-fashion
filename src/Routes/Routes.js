@@ -1,36 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Layout/Main";
-import Home from "../Pages/Home";
-import About from "../Pages/About";
-import Cart from "../Pages/Cart";
-import TopRated from "../Pages/TopRated";
+import Main from "../layout/Main";
+import About from "../pages/About";
+import Cart from "../pages/Cart";
+import Home from "../pages/Home";
+import TopRated from "../pages/TopRated";
 
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "top-rated",
+        element: <TopRated />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
+    ],
+  },
+]);
 
-
-const Routes = createBrowserRouter(
-    [
-        {
-            path:"/",
-            element: <Main />,
-            children: [
-                {
-                    path: "/",
-                    element: <Home />
-                },
-                {
-                    path: "/about",
-                    element: <About />
-                },
-                {
-                    path: "/cart",
-                    element: <Cart />
-                },
-                {
-                    path: "/top-rated",
-                    element: <TopRated />
-                },
-            ]
-        }
-    ]
-)
-export default Routes
+export default routes;
