@@ -2,7 +2,7 @@ import { ADD_TO_CART } from "../actionTypes/actionTypes";
 
 
 const initialState = {
-    Cart:[]
+    cart:[]
 };
 
 const ProductReducer = (state = initialState , action ) => {
